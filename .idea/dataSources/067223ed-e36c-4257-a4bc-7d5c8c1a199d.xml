@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="airqualitydb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="bookdb"/>
+    <schema id="4" parent="1" name="driverdb"/>
+    <schema id="5" parent="1" name="how2java"/>
+    <schema id="6" parent="1" name="hutubill"/>
+    <schema id="7" parent="1" name="information_schema"/>
+    <schema id="8" parent="1" name="mysql"/>
+    <schema id="9" parent="1" name="performance_schema"/>
+    <schema id="10" parent="1" name="productdb">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="11" parent="1" name="sakila"/>
+    <schema id="12" parent="1" name="shiro"/>
+    <schema id="13" parent="1" name="smbms"/>
+    <schema id="14" parent="1" name="springbootdb"/>
+    <schema id="15" parent="1" name="sys"/>
+    <schema id="16" parent="1" name="systemdb"/>
+    <schema id="17" parent="1" name="test"/>
+    <schema id="18" parent="1" name="tmall_ssm"/>
+    <schema id="19" parent="1" name="work_attendance"/>
+    <schema id="20" parent="1" name="world"/>
+    <table id="21" parent="2" name="air_quality_index"/>
+    <table id="22" parent="2" name="district"/>
+    <table id="23" parent="10" name="catagory"/>
+    <table id="24" parent="10" name="product"/>
+    <column id="25" parent="21" name="id">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="21" name="district_id">
+      <Position>2</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="21" name="monitor_time">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="21" name="pm10">
+      <Position>4</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="21" name="pm2.5">
+      <Position>5</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="21" name="monitoring_station">
+      <Position>6</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="21" name="last_modify_time">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="32" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="34" parent="22" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="35" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="23" name="id">
+      <Position>1</Position>
+      <Comment>编号</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="37" parent="23" name="name">
+      <Position>2</Position>
+      <Comment>名字</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="23" name="explain">
+      <Position>3</Position>
+      <Comment>介绍</Comment>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="39" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="24" name="id">
+      <Position>1</Position>
+      <Comment>产品id</Comment>
+      <DataType>int(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="41" parent="24" name="productname">
+      <Position>2</Position>
+      <Comment>产品名</Comment>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="24" name="descs">
+      <Position>3</Position>
+      <Comment>产品描述</Comment>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="43" parent="24" name="cid">
+      <Position>4</Position>
+      <Comment>类型编号</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="24" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

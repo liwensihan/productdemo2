@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.productDemo.dao.ProductDao">
+    <resultMap id="productMap" type="Product">
+        <id property="id" column="id"/>
+        <result property="productname" column="productname"/>
+        <result property="descs" column="descs"></result>
+        <association property="catagory" javaType="Catagory">
+            <id column="id" property="id"/>
+            <result property="name" column="name"/>
+            <result property="explain" column="explain"/>
+        </association>
+    </resultMap>
+    <insert id="add">
+        insert into productdb.product (productname, descs, cid) values (#{productname},#{descs},#{cid});
+    </insert>
+    <delete id="del" parameterType="integer">
+        DELETE FROM productdb.product WHERE id=#{id};
+    </delete>
+
+    <select id="getProducts" resultMap="productMap" parameterType="map">
+      select * from productdb.product p INNER JOIN productdb.catagory c ON (p.cid=c.id) limit #{pageNo},#{pageSize};
+    </select>
+    <select id="getCount" resultType="integer">
+      select count(*) from productdb.product;
+    </select>
+</mapper>
